@@ -7,6 +7,9 @@
 ## Módulos
 
 - Bem-vindo ao mundo Node.js
+- Inicializando Hapi.js
+- Integração MongoDB
+- EmberJS
 
 ## Curso
 
@@ -18,12 +21,11 @@
 - NPM
 - Hello Word
 - Desafio
+- Assincrono
 
 [http://gnab.github.io/remark/remarkise?url=https://github.com/catataw/hamber-book/blob/master/slide/bem-vindo-node.md](http://gnab.github.io/remark/remarkise?url=https://github.com/catataw/hamber-book/blob/master/slide/bem-vindo-node.md)
 
-### Introdução CSS
-**Duração**: 30 min
-**Objetivo**: Introdução ao CSS
+### Inicializando Hapi.js
 
 - Seletores CSS básicos
 - Seletores de tag html
@@ -38,5 +40,3 @@
     - padding
     - border
     - margin
-
-[https://github.com/Webschool-io/js4girls/blob/master/material-didatico/css.md](https://github.com/Webschool-io/js4girls/blob/master/material-didatico/css.md)
