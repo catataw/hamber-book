@@ -19,7 +19,7 @@
 - Hello Word
 - Desafio
 
-[http://gnab.github.io/remark/remarkise?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcatataw%2Fhamber-book%2Fmaster%2FREADME.md#1](http://gnab.github.io/remark/remarkise?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcatataw%2Fhamber-book%2Fmaster%2FREADME.md#1)
+[http://gnab.github.io/remark/remarkise?url=https://github.com/catataw/hamber-book/blob/master/slide/bem-vindo-node.md](http://gnab.github.io/remark/remarkise?url=https://github.com/catataw/hamber-book/blob/master/slide/bem-vindo-node.md)
 
 ### Introdução CSS
 **Duração**: 30 min
