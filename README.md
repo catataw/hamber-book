@@ -8,7 +8,9 @@
 
 - Bem-vindo ao mundo Node.js
 
-## Bem-vindo ao mundo Node.js
+## Curso
+
+### Bem-vindo ao mundo Node.js
 **Objetivo**: Introdução ao Node.js
 
 - Arquitetura
