@@ -17,7 +17,7 @@
 **Objetivo**: Introdução ao Node.js
 
 - Arquitetura
-- Instalação e Configuracao
+- Instalação e Configuração
 - NPM
 - Hello Word
 - Desafio
