@@ -1,16 +1,8 @@
-# Nome do Curso
-
-- **Duração:** X horas
-- **Peridiocidade**: X horas por semana
+# Hamber - Hapi.js + MongoDB + EmberJs
 
 ## Ementa
-Exemplo de EMENTA do JS4Girls
 
-## Slides
-
-[https://docs.google.com/presentation/d/1VDfx2n_K4NOnrvW3rq_Q3bcKKnQzxKvTio-oxfSL37E/edit?usp=sharing](https://docs.google.com/presentation/d/1VDfx2n_K4NOnrvW3rq_Q3bcKKnQzxKvTio-oxfSL37E/edit?usp=sharing)
-
-https://gnab.github.io/remark/remarkise
+ Curso voltado a ensinar o stack conhecido como Hamber(Hapijs,MongoDb,EmberJs).
 
 ## Módulos
 
@@ -39,8 +31,8 @@ Módulos com peso de 30 minutos para facilitar a organização, já que o evento
 - Elementos textuais
 - Formulários
 
-[https://github.com/Webschool-io/js4girls/blob/master/material-didatico/html-introducao.md](https://github.com/Webschool-io/js4girls/blob/master/material-didatico/html-introducao.md)
 
+[http://gnab.github.io/remark/remarkise?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcatataw%2Fhamber-book%2Fmaster%2FREADME.md#1](http://gnab.github.io/remark/remarkise?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcatataw%2Fhamber-book%2Fmaster%2FREADME.md#1)
 
 ### Introdução CSS
 **Duração**: 30 min
