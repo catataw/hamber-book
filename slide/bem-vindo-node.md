@@ -22,7 +22,7 @@ Os sistemas para web desenvolvidos sobre plataforma .NET, Java, PHP, Ruby ou Pyt
 ![Default-aligned image](ManieraTradicional.png)
 
 ---
-![Default-aligned image](ManeiraNode.png)
+![Default-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/ManeiraNode.png
 
 ## E assim nasceu o Node.js
 
