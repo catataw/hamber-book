@@ -19,7 +19,7 @@ Os sistemas para web desenvolvidos sobre plataforma .NET, Java, PHP, Ruby ou Pyt
 
 ---
 
-![Default-aligned image](ManieraTradicional.png)
+![Default-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/ManieraTradicional.png)
 
 ---
 
@@ -33,7 +33,7 @@ Foi baseado neste problema que, no final de 2009, Ryan Dahl com a ajuda inicial 
 
 Quais são alguns exemplos de I/O? Bom… aqui tem um diagrama de uma aplicação que eu fiz com node e ela mostra várias fontes de I/O:
 
-![Default-aligned image](diagrama-servidor.png)
+![Default-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/diagrama-servidor.png)
 
 Node faz o I/O de forma assíncrona asynchronous para lidar com diferentes situações simultaneas. Por exemplo, se você vai até um fast food e faz o pedido de um cheesebuger você tem de imadiato o pedido feito mas não o lanche, então você espara ele ficar pronto para comer. Neste meio tempo outros pedidos estão sendo feitos na lanchonete para outras pessoas. Imagine que você tenha que esperar o registro do seu cheeseburger, bloqueando outras pessoas porque o seu pedido tem que ser feito para o de outra começar enquanto preparam o seu. Isso é chamado de I/O bloqueante porque todo o I/O (cozinhar cheeseburgers) acontece um a um enfileirando tudo. O Node, por sua vez é não-bloqueante, significando que os pedidos serão feitos e entregues quando estiverem prontos.
 
