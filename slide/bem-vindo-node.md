@@ -25,6 +25,8 @@ Os sistemas para web desenvolvidos sobre plataforma .NET, Java, PHP, Ruby ou Pyt
 
 ![Default-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/ManeiraNode.png)
 
+---
+
 ## E assim nasceu o Node.js
 
 Foi baseado neste problema que, no final de 2009, Ryan Dahl com a ajuda inicial de 14 colaboradores criou o Node.js. Esta tecnologia possui um modelo inovador, sua  arquitetura é totalmente non-blocking thread (não-bloqueante), apresentando uma boa performance com consumo de memória e utilizando ao máximo e de forma eficiente o poder de processamento dos servidores, principalmente em sistemas que produzem uma alta carga de processamento. Usuários de sistemas Node estão livres de aguardarem por muito tempo o resultado de seus processos, e principalmente não sofrerão de dead-locks no sistema, porque nada bloqueia em sua plataforma e desenvolver sistemas nesse paradigma é simples e prático.
@@ -50,4 +52,5 @@ Então, agora que você tem um programa que pode manipular dezenas de milhares d
 ---
 
 ### O que Node definitivamente não é?
+
 Sim, Node é um servidor de programas. Entretanto o produto base do Node definitivamente não é como o Apache ou o Tomcat. Estes servidores são basicamente servidores ready-to-install e estão prontos para instalar aplicativos instantâneamente. Você pode subir e rodar um servidor em um minuto com estes produtos. Node definitivamente não é isso. Parecido com como o Apache pode adicionar um módulo PHP para permitir desenvolvedores criarem páginas da web dinâmicas, e um módulo SSL para conexões seguras, Node tem o conceito de módulos que podem ser adicionados no núcleo do Node. Há literalmente centenas de módulos para rodarem com o Node, e a comunidade é bastante ativa em produzir, publicar e atualizar dezenas de módulos por dia.
