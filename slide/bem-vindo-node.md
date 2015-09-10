@@ -37,6 +37,8 @@ Quais são alguns exemplos de I/O? Bom… aqui tem um diagrama de uma aplicaçã
 
 ![Default-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/diagrama-servidor.png)
 
+---
+
 Node faz o I/O de forma assíncrona asynchronous para lidar com diferentes situações simultaneas. Por exemplo, se você vai até um fast food e faz o pedido de um cheesebuger você tem de imadiato o pedido feito mas não o lanche, então você espara ele ficar pronto para comer. Neste meio tempo outros pedidos estão sendo feitos na lanchonete para outras pessoas. Imagine que você tenha que esperar o registro do seu cheeseburger, bloqueando outras pessoas porque o seu pedido tem que ser feito para o de outra começar enquanto preparam o seu. Isso é chamado de I/O bloqueante porque todo o I/O (cozinhar cheeseburgers) acontece um a um enfileirando tudo. O Node, por sua vez é não-bloqueante, significando que os pedidos serão feitos e entregues quando estiverem prontos.
 
 ---
@@ -46,6 +48,8 @@ Node faz o I/O de forma assíncrona asynchronous para lidar com diferentes situa
 Node estabeleceu o objetivo número um que é “fornecer uma maneira fácil para construir programas de rede escaláveis”. Qual é o problema com os programas servidores atuais? Vamos fazer os cálculos. *Em linguagens como Java™ e PHP, cada conexão cria uma nova thread que potencialmente tem anexado 2 MB de memória com ela. Em um sistema que tenha 8 GB de RAM, isso põe o número máximo teórico de conexões concorrentes a cerca de 4.000 usuários*.
 
 E quando o número de usuários aumenta, se você quer que sua aplicação web suporte mais usuários, você tem que adicionar mais e mais servidores. Somado a estes custos também podem haver possíveis problemas técnicos: um usuário pode usar diferentes servidores para cada requisição, então cada recurso compartilhado deve ser compartilhado para todos os servidores. Por todas estas rações, o gargalho em toda a arquitetura de aplicações web (incluindo velocidade de tráfego, velocidade do processador e velocidade da memória) é o número de conexões concorrentes que o servidor pode manipular.
+
+---
 
 Node resolve esta questão trocando a maneira como a conexão é tratada no servidor. Ao invés de criar uma nova OS thread a cada conexão (e alocar a memória anexa a ela), cada conexão dispara um evento executado dentro da engine de processos do Node. Node afirma que nunca vai dar deadlock, já que não há bloqueios permitidos, e ele não bloqueia diretamente para chamadas de I/O. Node também alega que um servidor rodando ele pode suportar dezenas de milhares de conexões simultâneas.
 
@@ -106,19 +110,19 @@ O Node.js utiliza nativamente o padrão CommonJS para organização e carregamen
 
 Abaixo apresento-lhe dois exemplos de códigos que utilizam esse padrão do CommonJS, primeiro crie o código hello.js 
 
-code
+```
 module.exports = function(msg) {
   console.log(msg);
 };
-code
+```
 
 E também crie o código human.js com o seguinte código:
 
-code
+```
 exports.hello = function(msg) {
   console.log(msg);
 };
-code
+```
 
 ---
 A diferença entre o hello.js e o human.js esta na maneira de como eles serão carregados. Em hello.js carregamos uma única função modular e em
@@ -126,13 +130,13 @@ human.js é carregado um objeto com funções modulares
 
 Para entender melhor na prática crie o código app.js para carregar esses módulos, seguindo o código abaixo:
 
-code
+```
   var hello = require('./hello');
   var human = require('./human');
 
   hello('Olá pessoal!');
   human.hello('Olá galera!');
-code
+```
 
 ---
 
