@@ -68,9 +68,9 @@ Sim, Node é um servidor de programas. Entretanto o produto base do Node definit
 Instalando Node.js: Primeiro passo, acesse o site oficial: (http://nodejs.org) e clique em Download, para usuários do Windows e MacOSX, basta baixar os
 seus instaladores e executá-los normalmente. Para quem já utiliza Linux com Package Manager instalado, acesse esse link (https://github.com/joyent/node/wiki/ Installing-Node.js-via-package-manager) que é referente as instruções sobre como instalá-lo em diferentes sistemas. Instale o Node.js de acordo com seu sistema, caso não ocorra problemas, basta abrir o seu terminal console ou prompt de comando e digitar o comando: node -v && npm -v para ver as respectivas versões do Node.js e NPM (Node Package Manager) que foram instaladas
 
-code
+```
   console.log("Hello World")
-code
+```
 
 ---
 
@@ -142,4 +142,5 @@ Para entender melhor na prática crie o código app.js para carregar esses módu
 
 Percebam o quão simples é programar com Node.js! Com base nesses pequenos trechos de código já foi possível criar um código altamente escalável e modular que utiliza as boas práticas do padrão CommonJS.
 
-----
+
+## Criando nossa primeira aplicação web
