@@ -144,3 +144,74 @@ Percebam o quão simples é programar com Node.js! Com base nesses pequenos trec
 
 
 ## Criando nossa primeira aplicação web
+
+
+Node.js é multiprotocolo, ou seja, com ele será possível trabalhar com os protocolos: HTTP,HTTPS,FTP,SSH,DNS,TCP,UDP,WebSocketsetambémexistemoutros protocolos, que são disponíveis através de módulos não-oficiais criados pela comunidade
+
+oda aplicação web necessita de um servidor para disponibilizar todos os seus recursos. Na prática,como Node.js você desenvolve uma "aplicaçã omiddleware”, ou seja,além de programaras funcionalidades da sua aplicação, você também programa códigos de configuração de infraestrutura da sua aplicação
+
+---
+
+Primeiro usaremos apenas o módulo nativo HTTP, pois precisamos entender todo o conceito desse módulo, visto que todos os frameworks citados acima o utilizam como estrutura inicial em seus projetos. Abaixo mostro a vocês uma clássica aplicação Hello World. Crie o arquivo hello_server.js com o seguinte conteúdo:
+
+````
+var http = require('http');
+
+var server = http.createServer(function(request, response){
+  response.writeHead(200, {"Content-Type": "text/html"});
+  response.write("<h1>Hello World!</h1>");
+  response.end();
+});
+
+server.listen(3000);
+
+````
+---
+
+Ométodo listen tambéméassíncronoevocêsósaberáqueoservidorestáde pé quando o Node invocar sua função de callback.
+Se você ainda está começando com JavaScript, pode estranhar um pouco ficar passandocomoparâmetrouma function portodososlados,masissoéalgomuito
+comum no mundo Javascript. Como sintaxe alternativa, caso o seu código fique muito complicado em encadeamentos de diversos blocos, podemos isolá-lo em funções com nomes mais significativos, por exemplo:
+
+
+```
+var http = require('http');
+
+var atendeRequisicao = function(request, response) {
+  response.writeHead(200, {"Content-Type": "text/html"});
+  response.write("<h1>Hello World!</h1>");
+  response.end();
+}
+var server = http.createServer(atendeRequisicao);
+
+var servidorLigou = function() {
+  console.log('Servidor Hello World rodando!');
+}
+
+server.listen(3000, servidorLigou);
+
+```
+
+----
+## Desafio
+
+Desafio: Implementar um roteador de url
+
+- Crie 3 arquivos HTML: artigos.html, contato.html e erro.html 
+
+- Coloque qualquer conteúdo para cada página html;
+
+- Ao digitar no browser o path: /artigos deve renderizar artigos.html;
+
+- Ao digitar qualquer path diferente de /artigos e /contato deve renderizar
+erro.html;
+
+- A rota principal "/” deve renderizar artigos.html;
+
+----
+
+O resultado desse desafio se encontra na página github deste livro:
+https://github.com/caio-ribeiro-pereira/livro-nodejs/tree/master/desafio-1
+
+---
+
+## Assincrono
