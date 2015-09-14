@@ -25,7 +25,7 @@ Os sistemas para web desenvolvidos sobre plataforma .NET, Java, PHP, Ruby ou Pyt
 ---
 <br><br><br><br>
 
-[center-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/ManeiraNode.png)
+.center.half[![ManieraNode](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/ManeiraNode.png)]
 
 ---
 
@@ -39,9 +39,9 @@ Usuários de sistemas Node estão livres de aguardarem por muito tempo o resulta
 
 Node faz o I/O de forma assíncrona asynchronous para lidar com diferentes situações simultaneas.
 
-<br><br><br><br>
+<br><br>
 
-.center![Right-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/fila.jpg)
+.center.half[![Fila](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/fila.jpg)]
 
 ---
 
@@ -53,9 +53,9 @@ Isso é chamado de I/O bloqueante porque todo o I/O (cozinhar cheeseburgers) aco
 
 Quais são alguns exemplos de I/O? Bom… aqui tem um diagrama de uma aplicação que eu fiz com node e ela mostra várias fontes de I/O:
 
-<br><br><br><br>
+<br><br><br>
 
-![Default-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/diagrama-servidor.png)
+.center.half[![DiagramaServidor](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/diagrama-servidor.png)]
 
 ---
 
