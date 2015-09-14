@@ -147,7 +147,7 @@ Percebam o quão simples é programar com Node.js! Com base nesses pequenos trec
 ## Criando nossa primeira aplicação web
 
 
-Node.js é multiprotocolo, ou seja, com ele será possível trabalhar com os protocolos: HTTP,HTTPS,FTP,SSH,DNS,TCP,UDP,WebSocketsetambémexistemoutros protocolos, que são disponíveis através de módulos não-oficiais criados pela comunidade
+Node.js é multiprotocolo, ou seja, com ele será possível trabalhar com os protocolos: HTTP,HTTPS,FTP,SSH,DNS,TCP,UDP,WebSocket se também exist em outros protocolos, que são disponíveis através de módulos não-oficiais criados pela comunidade
 
 oda aplicação web necessita de um servidor para disponibilizar todos os seus recursos. Na prática,como Node.js você desenvolve uma "aplicaçã omiddleware”, ou seja,além de programaras funcionalidades da sua aplicação, você também programa códigos de configuração de infraestrutura da sua aplicação
 
@@ -192,7 +192,7 @@ server.listen(3000, servidorLigou);
 
 ```
 
-----
+---
 
 ## Desafio
 
@@ -209,7 +209,7 @@ erro.html;
 
 - A rota principal "/” deve renderizar artigos.html;
 
-----
+---
 
 O resultado desse desafio se encontra na página github deste livro:
 https://github.com/caio-ribeiro-pereira/livro-nodejs/tree/master/desafio-1
