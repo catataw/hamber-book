@@ -18,10 +18,12 @@
 Os sistemas para web desenvolvidos sobre plataforma .NET, Java, PHP, Ruby ou Python possuem uma característica em comum: eles paralisam um processamento enquanto utilizam um I/O no servidor. **Essa paralisação é conhecida como modelo bloqueante (Blocking-Thread)**. Em um servidor web podemos visualizá-lo de forma ampla e funcional. Vamos considerar que cada processo é requisição feita pelo usuário. Com o decorrer da aplicação, novos usuários vão acessando-a, gerando uma requisição no servidor. **Um sistema bloqueante enfileira cada requisição e depois as processa, uma a uma, não permitindo múltiplos processamentos delas**
 
 ---
+<br><br><br><br>
 
-.center![Right-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/ManieraTradicional.png)
+.center.half[![ManieraTradicional]((https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/ManieraTradicional.png)]
 
 ---
+<br><br><br><br>
 
 [center-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/ManeiraNode.png)
 
