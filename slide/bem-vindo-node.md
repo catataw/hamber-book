@@ -169,9 +169,8 @@ server.listen(3000);
 ````
 ---
 
-Ométodo listen tambéméassíncronoevocêsósaberáqueoservidorestáde pé quando o Node invocar sua função de callback.
-Se você ainda está começando com JavaScript, pode estranhar um pouco ficar passandocomoparâmetrouma function portodososlados,masissoéalgomuito
-comum no mundo Javascript. Como sintaxe alternativa, caso o seu código fique muito complicado em encadeamentos de diversos blocos, podemos isolá-lo em funções com nomes mais significativos, por exemplo:
+O método listen também é assíncrono e você só saberá que o servidor está de pé quando o Node invocar sua função de callback.
+Se você ainda está começando com JavaScript, pode estranhar um pouco ficar passando como parâmetro uma function por todos os lados,mas isso é algo muito comum no mundo Javascript. Como sintaxe alternativa, caso o seu código fique muito complicado em encadeamentos de diversos blocos, podemos isolá-lo em funções com nomes mais significativos, por exemplo:
 
 
 ```
