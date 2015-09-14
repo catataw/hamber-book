@@ -35,13 +35,18 @@ Usuários de sistemas Node estão livres de aguardarem por muito tempo o resulta
 
 ---
 
-Quais são alguns exemplos de I/O? Bom… aqui tem um diagrama de uma aplicação que eu fiz com node e ela mostra várias fontes de I/O:
+Node faz o I/O de forma assíncrona asynchronous para lidar com diferentes situações simultaneas.
 
-![Default-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/diagrama-servidor.png)
+**Por exemplo, se você vai até um fast food e faz o pedido de um cheesebuger você tem de imadiato o pedido feito mas não o lanche, então você espara ele ficar pronto para comer. Neste meio tempo outros pedidos estão sendo feitos na lanchonete para outras pessoas. Imagine que você tenha que esperar o registro do seu cheeseburger, bloqueando outras pessoas porque o seu pedido tem que ser feito para o de outra começar enquanto preparam o seu.** 
+
+Isso é chamado de I/O bloqueante porque todo o I/O (cozinhar cheeseburgers) acontece um a um enfileirando tudo. O Node, por sua vez é não-bloqueante, significando que os pedidos serão feitos e entregues quando estiverem prontos.
 
 ---
 
-Node faz o I/O de forma assíncrona asynchronous para lidar com diferentes situações simultaneas. **Por exemplo, se você vai até um fast food e faz o pedido de um cheesebuger você tem de imadiato o pedido feito mas não o lanche, então você espara ele ficar pronto para comer. Neste meio tempo outros pedidos estão sendo feitos na lanchonete para outras pessoas. Imagine que você tenha que esperar o registro do seu cheeseburger, bloqueando outras pessoas porque o seu pedido tem que ser feito para o de outra começar enquanto preparam o seu.** Isso é chamado de I/O bloqueante porque todo o I/O (cozinhar cheeseburgers) acontece um a um enfileirando tudo. O Node, por sua vez é não-bloqueante, significando que os pedidos serão feitos e entregues quando estiverem prontos.
+Quais são alguns exemplos de I/O? Bom… aqui tem um diagrama de uma aplicação que eu fiz com node e ela mostra várias fontes de I/O:
+
+
+![Default-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/diagrama-servidor.png)
 
 ---
 
@@ -223,3 +228,197 @@ https://github.com/caio-ribeiro-pereira/livro-nodejs/tree/master/desafio-1
 ---
 
 ## Assincrono
+
+É importante focar no uso das chamadas assíncronas quando trabalhamos com Node.js, assim como entender quando elas são invocadas. O código abaixo exemplifia as diferen ças entre uma fun ção síncrona e assíncrona em relação a linha do tempo que ela são executadas. Basicamente criaremos um loop de 5 itera ções, a cada itera ção será criado um arquivo texto com o mesmo conteúdo Hello Node.js! .
+
+Primeiro vamos come çar com o código síncrono. Crie o arquivo *text_sync.js* com o código abaixo:
+
+```
+var fs = require( ' fs ' );
+
+for(var i = 1; i <= 5; i++) {
+  var file = "sync-txt" + i + ".txt";
+  var out = fs.writeFileSync(file, "Hello Node.js!");
+  console.log(out);
+}
+
+```
+
+---
+
+Agora vamos criar o arquivo text_async.js, com seu respectivo código, diferente apenas na forma de chamar a fun ção writeFileSync, que será a versãoa ssíncrona writeFile, recebendo uma função como argumento:
+
+```
+var fs = require( ' fs ' );
+
+for(var i = 1; i <= 5; i++) {
+  var file = "async-txt" + i + ".txt";
+  fs.writeFile(file, "Hello Node.js!", function(err, out) {
+    console.log(out);
+  });
+}
+
+```
+
+Vamos rodar? Execute os comandos: node text_sync e depois node text_async. Se for gerado 10 arquivos no mesmo diretório do código-fonte, então deu tudo certo. 
+
+
+---
+
+## Threads vs A ssincronismos
+
+Por mais que as funções assíncronas possam executar em paralelo várias tarefas, *elas jamais serão consideradas uma Thead* (por exemplo Threads do Java). A diferença é que *Theads são manipuláveis pelo desenvolvedor*, ou seja, você pode pausar a execução de uma Thead ou fazê-la esperar o término de uma outra. *Chamadas assíncronas apenas invocam suas funções numa ordem de que você não tem controle*, e você só sabe quando uma chamada terminou quando seu callback é executado.
+
+Pode parecer vantajoso ter o controle sobre as Theads a favor de um sistema que executa tarefas em paralelo, mas pouco domínio sobre eles pode transformar seu sistema em um caos de travamentos dead-locks, afinal *Theads são executadas de forma bloqueante*. Este é o grande diferencial das chamadas assíncronas, elas executam em paralelo suas funções sem travar processamento das outras e principalmente sem bloquear o sistema principal
+
+Talvez você ainda não esteja convencido. A próxima se ção vai lhe mostrar como e quando utilizar bibliotecas assíncronas não-bloqueantes, tudo isso através de teste prático.
+
+---
+## A ssincronismo versus S incronismo
+
+Para isso crie 3 arquivos: processamento.js, leitura_async.js e leitura_sync.js
+
+leitura_async.js 
+
+```
+var fs = require( ' fs ' );
+
+var leituraAsync = function(arquivo){
+  console.log("Fazendo leitura assíncrona");
+  var inicio = new Date().getTime();
+  fs.readFile(arquivo)
+  var fim = new Date().getTime();
+  console.log("Bloqueio assíncrono: "+(fim - inicio) + "ms");
+};
+
+module.exports = leituraAsync;
+
+```
+---
+Em seguida criaremos o código leitura_sync.js que faz leitura síncrona:
+
+```
+var fs = require( ' fs ' );
+
+var leituraSync = function(arquivo){
+  console.log("Fazendo leitura síncrona");
+  var inicio = new Date().getTime();
+  fs.readFileSync(arquivo);
+  var fim = new Date().getTime();
+  console.log("Bloqueio síncrono: "+(fim - inicio) + "ms");
+};
+
+module.exports = leituraSync;
+
+```
+
+Para fializar carregamos os dois tipos de leituras dentro do código processamento.js:
+
+```
+var http = require( ' http ' );
+var fs = require( ' fs ' );
+var leituraAsync = require( ' ./leitura_async ' );
+var leituraSync = require( ' ./leitura_sync ' );
+var arquivo = "./node.exe";
+var stream = fs.createWriteStream(arquivo);
+var download = "http://nodejs.org/dist/latest/node.exe";
+
+http.get(download, function(res) {
+  console.log("Fazendo download do Node.js");
+  res.on( ' data ' , function(data){
+    stream.write(data);
+  });
+  res.on( ' end ' , function(){
+    stream.end();
+    console.log("Download finalizado!");
+    leituraAsync(arquivo);
+    leituraSync(arquivo);
+  });
+});
+
+```
+---
+Rode o comando node processamento.js para executar o benchmark. E agora, fiou clara a diferen ça entre o modelo bloqueante e o não-bloqueante?
+
+
+Veja a pequena, porém signifiante diferen ça de tempo entre as duas funções de leitura.
+
+Se esse teste foi com um arquivo de mais ou menos 50 MB, imagine esse teste em larga escala, lendo múltiplos arquivos de 1 GB ao mesmo tempo ou realizando múltiplos uploads em seu servidor? Esse é um dos pontos fortes do Node.js!
+
+---
+
+## Entendendo o Event-Loop
+
+Isso acontece devido ao fato, de que uma chamada de I/O é considerada um tarefa muito custosa para um computador realizar. Tão custosa que chega a ser perceptível para um usuário, por exemplo, quando ele tenta abrir um arquivo de 1 GB e o sistema operacional trava alguns segundos para abri-lo. 
+
+Vendo o contexto de um servidor, por mais potente que seja seu hardware, eles terão os mesmos bloqueios perceptíveis pelo usuário, a diferença é que um servidor estará lidando com milhares usuários requisitando I/O, com a grande probabilidade de ser ao mesmo tempo
+
+É por isso que o Node.js trabalha com assincronismo. Ele permite que você desenvolva um sistema totalmente orientado a eventos, tudo isso graças ao Event-loop
+
+---
+
+![Default-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/eventoloop.png)
+
+Basicamente ele é um *loop infiito*, que em cada iteração verifia se existem novos eventos em sua fia de eventos. Tais eventos somente aparecem nesta fia quando são emitidos durante suas interações na aplicação.
+
+Quando um determinado código emite um evento, o mesmo é enviado para a fia de eventos para que o Event-loop executeo, e em seguida retorne seu callback. Tal callback pode ser executado através de uma função de escuta, semanticamente conhecida pelo nome: on().
+
+---
+
+## Evitando Callbacks Hell
+
+De fato, vimos o quanto é vantajoso e performático trabalhar de forma assíncrona, porém em certos momentos, inevitavelmente implementaremos diversas funções assíncronas, que serão encadeadas uma na outra através das suas funções callback.
+
+callback_hell.js
+
+```
+var fs = require( ' fs ' );
+
+fs.readdir(__dirname, function(erro, contents) {
+  if (erro) { throw erro; }
+  contents.forEach(function(content) {
+    var path = ' ./ ' + content;
+    fs.stat(path, function(erro, stat) {
+      if (erro) { throw erro; }
+      if (stat.isFile()) {
+        console.log( ' %s %d bytes ' , content, stat.size);
+      }
+    });
+  });
+});
+
+```
+Reparem na quantidade de callbacks encadeados que existem em nosso código.Detalhe: ele apenas faz uma simples leitura dos arquivos de seu diretório e imprime na tela seu nome e tamanho em bytes
+
+----
+Uma boa prática de código Javascript é criar funções que expressem seu objetivo e de forma isoladas, salvando em variável e passando-as como callback. Ao invés de criar funções anônimas.
+
+callback_heaven.js 
+
+```
+var fs = require( ' fs ' );
+var lerDiretorio = function() {
+  fs.readdir(__dirname, function(erro, diretorio) {
+    if (erro) return erro;
+    diretorio.forEach(function(arquivo) {
+      ler(arquivo);
+    });
+  });
+};
+
+var ler = function(arquivo) {
+  var path = ' ./ ' + arquivo;
+  fs.stat(path, function(erro, stat) {
+    if (erro) return erro;
+    if (stat.isFile()) {
+      console.log( ' %s %d bytes ' , arquivo, stat.size);
+    }
+  });
+};
+
+lerDiretorio();
+
+```
+---
+
+https://www.youtube.com/watch?v=PDlPgalYQeM
