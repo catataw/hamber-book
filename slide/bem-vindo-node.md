@@ -19,11 +19,11 @@ Os sistemas para web desenvolvidos sobre plataforma .NET, Java, PHP, Ruby ou Pyt
 
 ---
 
-.center[!Right-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/ManieraTradicional.png)
+.center![Right-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/ManieraTradicional.png)
 
 ---
 
-.center[!Right-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/ManeiraNode.png)
+[center-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/ManeiraNode.png)
 
 ---
 
@@ -37,7 +37,7 @@ Usuários de sistemas Node estão livres de aguardarem por muito tempo o resulta
 
 Node faz o I/O de forma assíncrona asynchronous para lidar com diferentes situações simultaneas.
 
-.center[!Right-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/fila.jpg)
+.center![Right-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/fila.jpg)
 
 ---
 
