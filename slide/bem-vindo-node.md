@@ -19,11 +19,11 @@ Os sistemas para web desenvolvidos sobre plataforma .NET, Java, PHP, Ruby ou Pyt
 
 ---
 
-![Default-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/ManieraTradicional.png)
+.center[![Right-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/ManieraTradicional.png)
 
 ---
 
-![Default-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/ManeiraNode.png)
+.center[![Right-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/ManeiraNode.png)
 
 ---
 
@@ -36,6 +36,12 @@ Usuários de sistemas Node estão livres de aguardarem por muito tempo o resulta
 ---
 
 Node faz o I/O de forma assíncrona asynchronous para lidar com diferentes situações simultaneas.
+
+---
+
+.center[![Right-aligned image](https://raw.githubusercontent.com/catataw/hamber-book/master/asserts/fila.jpg)
+
+---
 
 **Por exemplo, se você vai até um fast food e faz o pedido de um cheesebuger você tem de imadiato o pedido feito mas não o lanche, então você espara ele ficar pronto para comer. Neste meio tempo outros pedidos estão sendo feitos na lanchonete para outras pessoas. Imagine que você tenha que esperar o registro do seu cheeseburger, bloqueando outras pessoas porque o seu pedido tem que ser feito para o de outra começar enquanto preparam o seu.** 
 
@@ -312,6 +318,8 @@ module.exports = leituraSync;
 
 ```
 
+---
+
 Para fializar carregamos os dois tipos de leituras dentro do código processamento.js:
 
 ```
@@ -390,7 +398,8 @@ fs.readdir(__dirname, function(erro, contents) {
 ```
 Reparem na quantidade de callbacks encadeados que existem em nosso código.Detalhe: ele apenas faz uma simples leitura dos arquivos de seu diretório e imprime na tela seu nome e tamanho em bytes
 
-----
+---
+
 Uma boa prática de código Javascript é criar funções que expressem seu objetivo e de forma isoladas, salvando em variável e passando-as como callback. Ao invés de criar funções anônimas.
 
 callback_heaven.js 
