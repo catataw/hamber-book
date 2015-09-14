@@ -125,6 +125,7 @@ exports.hello = function(msg) {
 ```
 
 ---
+
 A diferença entre o hello.js e o human.js esta na maneira de como eles serão carregados. Em hello.js carregamos uma única função modular e em
 human.js é carregado um objeto com funções modulares
 
@@ -192,6 +193,7 @@ server.listen(3000, servidorLigou);
 ```
 
 ----
+
 ## Desafio
 
 Desafio: Implementar um roteador de url
